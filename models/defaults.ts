@@ -24,7 +24,7 @@ export const DEFAULT_SETTINGS = [
     code: "default_currency",
     name: "Default Currency",
     description: "Don't change this setting if you already have multi-currency transactions. I won't recalculate them.",
-    value: "EUR",
+    value: "PHP",
   },
   {
     code: "default_category",
