@@ -4,12 +4,14 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "7331:7331"
+      - "7556:7331"
     environment:
       - NODE_ENV=production
       - SELF_HOSTED_MODE=true
       - UPLOAD_PATH=/app/data/uploads
       - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/taxhacker
+    env_file:
+      - .env
     volumes:
       - ./data:/app/data
     restart: unless-stopped
@@ -30,7 +32,7 @@ services:
       - ./pgdata:/var/lib/postgresql/data
     restart: unless-stopped
     ports:
-      - "5432:5432"
+      - "5433:5432"
     logging:
       driver: "local"
       options:
